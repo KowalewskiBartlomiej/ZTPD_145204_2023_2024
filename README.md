@@ -1,0 +1,2 @@
+# ZTPD_145204_2023_2024
+Zaawansowane technologie przetwarzania danych
