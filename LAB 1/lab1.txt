@@ -1,1 +1,45 @@
 LAB 1
+
+ZADANIE 1:
+
+create type samochod as object (
+    marka varchar2(20),
+    model varchar2(20),
+    kilometry number,
+    data_produkcji date,
+    cena number(10,2)
+);
+
+create table samochody of samochod;
+
+desc samochody;
+
+insert into samochody values (
+    new samochod('Fiat', 'Brava', 60000, DATE '1999-11-30', 25000));
+
+insert into samochody values (
+    new samochod('Ford', 'Mondeo', 80000, DATE '1997-05-10', 45000));
+
+insert into samochody values (
+    new samochod('Mazda', '323', 12000, DATE '2000-09-22', 52000));
+
+select * from samochody;
+
+ZADANIE 2:
+
+create table wlasciciele (
+    imie varchar2(20),
+    nazwisko varchar2(20),
+    auto samochod
+);
+
+desc wlasciciele;
+
+insert into wlasciciele values (
+    'Jan', 'Kowalski', samochod('Fiat', 'Seicento', 30000, Date '2010-12-02', 19500)
+); 
+
+insert into wlasciciele values (
+    'Adam', 'Nowak', samochod('Opel', 'Astra', 34000, Date '2009-06-01', 33700)
+); 
+
