@@ -65,7 +65,7 @@ return $pracownik/NAZWISKO
 
 ZADANIE 36
 xquery version "3.1";
-let $zespolId := doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[NAZWISKO = 'BRZEZINSKI']/ID_ZESP
+let $idZesp := doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[NAZWISKO = 'BRZEZINSKI']/ID_ZESP
 return sum(
-    for $pracownik in doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[ID_ZESP = $zespolId]
+    for $pracownik in doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[ID_ZESP = $idZesp]
     return $pracownik/PLACA_POD)
