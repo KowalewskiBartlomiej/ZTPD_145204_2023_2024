@@ -29,7 +29,7 @@ return <KRAJ>
 </KRAJ>
 
 ZADANIE 29
-for $k in doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/swiat.xml')/SWIAT/KRAJE/KRAJ where starts-with($k/STOLICA, substring($k/NAZWA, 1, 1))
+for $k in doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/swiat.xml')/SWIAT/KRAJE/KRAJ[starts-with(STOLICA, substring(NAZWA, 1, 1))]
 return <KRAJ>
     {$k/NAZWA, $k/STOLICA}
 </KRAJ>
@@ -37,6 +37,10 @@ return <KRAJ>
 ZADANIE 30
 xquery version "3.1";
 doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/swiat.xml')//KRAJ
+
+ZADANIE 31
+xquery version "3.1";
+doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')
 
 ZADANIE 32
 xquery version "3.1";
@@ -64,5 +68,4 @@ xquery version "3.1";
 let $zespolId := doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[NAZWISKO = 'BRZEZINSKI']/ID_ZESP
 return sum(
     for $pracownik in doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[ID_ZESP = $zespolId]
-    return $pracownik/PLACA_POD
-)
+    return $pracownik/PLACA_POD)
