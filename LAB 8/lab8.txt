@@ -35,36 +35,29 @@ return <KRAJ>
 </KRAJ>
 
 ZADANIE 30
-xquery version "3.1";
 doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/swiat.xml')//KRAJ
 
 ZADANIE 31
-xquery version "3.1";
 doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')
 
 ZADANIE 32
-xquery version "3.1";
 for $nazwisko in doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW/PRACOWNICY/ROW/NAZWISKO
 return $nazwisko
 
 ZADANIE 33
-xquery version "3.1";
 let $nazwiska :=
     for $nazwisko in doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[NAZWA = 'SYSTEMY EKSPERCKIE']/PRACOWNICY/ROW/NAZWISKO
     return $nazwisko/text()
 return string-join($nazwiska, '&#10;')
 
 ZADANIE 34
-xquery version "3.1";
 count(doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[ID_ZESP = '10']/PRACOWNICY/ROW)
 
 ZADANIE 35
-xquery version "3.1";
 for $pracownik in doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[ID_SZEFA = '100']
 return $pracownik/NAZWISKO
 
 ZADANIE 36
-xquery version "3.1";
 let $idZesp := doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[NAZWISKO = 'BRZEZINSKI']/ID_ZESP
 return sum(
     for $pracownik in doc('file:///C:/Users/kowal/Desktop/XPath-XSLT/zesp_prac.xml')//ROW[ID_ZESP = $idZesp]
