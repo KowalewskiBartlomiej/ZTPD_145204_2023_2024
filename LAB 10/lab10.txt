@@ -1,0 +1,6 @@
+ZADANIE 5
+for $book in doc("db/bib/bib.xml")//book
+for $author in $book/author
+return $author/last
+
+ZADANIE 6
